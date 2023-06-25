@@ -4,7 +4,7 @@ Resource    /Users/ashishmalik/Automation Development/robot-scripts/AmazonProjec
 Resource    /Users/ashishmalik/Automation Development/robot-scripts/AmazonProject/Resources/Commons.robot
 
 *** Test Cases ***
-Sample Test Cases
+Sample Test Cases to Check Github Push.
     [Documentation]    Getting started with Amazon Login
     [Tags]              Smoke
     set selenium speed    .2s

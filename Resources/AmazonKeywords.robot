@@ -5,7 +5,6 @@ Library     SeleniumLibrary
 *** Keywords ***
 
 Begin Test
-    go to    https://www.amazon.ca/
     wait until page contains    amazon.ca
 Search for Product
     input text    id=twotabsearchtextbox    ferrari 458

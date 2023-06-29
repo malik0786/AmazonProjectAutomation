@@ -1,11 +1,13 @@
 *** Settings ***
 
-Library     SeleniumLibrary
+Library     Selenium2Library
+Library     Selenium2Library
+Resource  /Users/ashishmalik/Automation Development/robot-scripts/AmazonProject/Resources/PO/landingPage.robot
 
 *** Keywords ***
-
 Begin Test
-    wait until page contains    amazon.ca
+    landingPage.Load
+    landingPage.Verify Page loads
 Search for Product
     input text    id=twotabsearchtextbox    ferrari 458
     click button    xpath=//*[@id="nav-search-submit-button"]

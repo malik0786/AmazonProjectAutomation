@@ -1,11 +1,7 @@
 *** Settings ***
-Library    SeleniumLibrary
-
+Library    Selenium2Library
 
 *** Keywords ***
-
-Load Browser
-    open browser    https://www.amazon.ca/     chrome
 End Test
     close browser
 Insert data

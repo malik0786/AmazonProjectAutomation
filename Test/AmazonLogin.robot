@@ -1,9 +1,10 @@
 *** Settings ***
 Documentation    Basic Test cases
+Library         Selenium2Library
 Resource    /Users/ashishmalik/Automation Development/robot-scripts/AmazonProject/Resources/AmazonKeywords.robot
 Resource    /Users/ashishmalik/Automation Development/robot-scripts/AmazonProject/Resources/Commons.robot
 Suite Setup     Insert data
-Test Setup      Load Browser
+Test Setup      Begin Test
 Test Teardown    End Test
 Suite Teardown    Clean up data
 
@@ -16,11 +17,8 @@ User can Search for Products on Amazon
     set selenium timeout    10s
 
     log    Starting login into Amazon
-    AmazonKeywords.Begin Test
-    AmazonKeywords.Search for Product
 
 User can add the products to Cart
-    AmazonKeywords.Begin Test
     AmazonKeywords.Search for Product
     AmazonKeywords.Click on Selected Product
     AmazonKeywords.Add to Cart

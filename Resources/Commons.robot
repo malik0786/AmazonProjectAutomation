@@ -1,6 +1,9 @@
 *** Settings ***
 Library    Selenium2Library
 
+*** Variables ***
+${GLOBAL_VARIABLE} =  declared global variable
+
 *** Keywords ***
 End Test
     close browser

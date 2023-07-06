@@ -1,95 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.2 (Python 3.9.0 on darwin)" generated="20230630 01:25:25.466" rpa="false" schemaversion="3">
-<suite id="s1" name="AmazonLogin" source="/Users/ashishmalik/Automation Development/robot-scripts/AmazonProject/Test/AmazonLogin.robot">
-<kw name="Insert data" library="Commons" type="SETUP">
-<kw name="Log" library="BuiltIn">
-<arg>I am inserting some data before running test cases.</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20230630 01:25:25.614" level="INFO">I am inserting some data before running test cases.</msg>
-<status status="PASS" starttime="20230630 01:25:25.613" endtime="20230630 01:25:25.614"/>
+<robot generator="Robot 6.0.2 (Python 3.9.0 on darwin)" generated="20230706 01:04:06.165" rpa="false" schemaversion="3">
+<suite id="s1" name="passingVariablesToKeywords" source="/Users/ashishmalik/Automation Development/robot-scripts/AmazonProject/Test/passingVariablesToKeywords">
+<test id="s1-t1" name="Open browser using list variable" line="12">
+<kw name="Set Variable" library="BuiltIn">
+<var>@{url_and_browser}</var>
+<arg>http://www.amazon.ca</arg>
+<arg>chrome</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230706 01:04:06.312" level="INFO">@{url_and_browser} = [ http://www.amazon.ca | chrome ]</msg>
+<status status="PASS" starttime="20230706 01:04:06.312" endtime="20230706 01:04:06.312"/>
 </kw>
-<status status="PASS" starttime="20230630 01:25:25.613" endtime="20230630 01:25:25.614"/>
-</kw>
-<test id="s1-t1" name="Variable Demostration 2" line="22">
-<kw name="Begin Test" library="AmazonKeywords" type="SETUP">
-<kw name="Load" library="landingPage">
+<kw name="Begin web test using list variables">
+<arg>@{url_and_browser}</arg>
 <kw name="Open Browser" library="Selenium2Library">
-<arg>${URL_NAME}</arg>
-<arg>${BROWSER_NAME}</arg>
+<arg>${url_and_browser}[0]</arg>
+<arg>${url_and_browser}[1]</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230630 01:25:25.615" level="INFO">Opening browser 'chrome' to base url 'https://www.amazon.ca/'.</msg>
-<status status="PASS" starttime="20230630 01:25:25.615" endtime="20230630 01:25:29.927"/>
+<msg timestamp="20230706 01:04:06.313" level="INFO">Opening browser 'chrome' to base url 'http://www.amazon.ca'.</msg>
+<status status="PASS" starttime="20230706 01:04:06.312" endtime="20230706 01:04:10.525"/>
 </kw>
-<status status="PASS" starttime="20230630 01:25:25.614" endtime="20230630 01:25:29.928"/>
-</kw>
-<kw name="Verify Page loads" library="landingPage">
-<kw name="Wait Until Page Contains" library="Selenium2Library">
-<arg>${WAITING_PAGE}</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20230630 01:25:29.929" endtime="20230630 01:25:30.085"/>
-</kw>
-<status status="PASS" starttime="20230630 01:25:29.928" endtime="20230630 01:25:30.085"/>
-</kw>
-<status status="PASS" starttime="20230630 01:25:25.614" endtime="20230630 01:25:30.086"/>
-</kw>
-<kw name="Create List" library="BuiltIn">
-<var>@{new_list_variables}</var>
-<arg>list3</arg>
-<arg>list4</arg>
-<arg>list5</arg>
-<doc>Returns a list containing given items.</doc>
-<msg timestamp="20230630 01:25:30.086" level="INFO">@{new_list_variables} = [ list3 | list4 | list5 ]</msg>
-<status status="PASS" starttime="20230630 01:25:30.086" endtime="20230630 01:25:30.086"/>
-</kw>
-<kw name="Log" library="BuiltIn">
-<arg>${new_list_variables}[0]</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20230630 01:25:30.087" level="INFO">list3</msg>
-<status status="PASS" starttime="20230630 01:25:30.086" endtime="20230630 01:25:30.087"/>
-</kw>
-<kw name="Log" library="BuiltIn">
-<arg>${new_list_variables}[1]</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20230630 01:25:30.087" level="INFO">list4</msg>
-<status status="PASS" starttime="20230630 01:25:30.087" endtime="20230630 01:25:30.087"/>
-</kw>
-<kw name="Log" library="BuiltIn">
-<arg>${new_list_variables}[2]</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20230630 01:25:30.088" level="INFO">list5</msg>
-<status status="PASS" starttime="20230630 01:25:30.087" endtime="20230630 01:25:30.088"/>
-</kw>
-<kw name="End Test" library="Commons" type="TEARDOWN">
 <kw name="Close Browser" library="Selenium2Library">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20230630 01:25:30.089" endtime="20230630 01:25:30.272"/>
+<status status="PASS" starttime="20230706 01:04:10.525" endtime="20230706 01:04:10.640"/>
 </kw>
-<status status="PASS" starttime="20230630 01:25:30.088" endtime="20230630 01:25:30.272"/>
+<status status="PASS" starttime="20230706 01:04:06.312" endtime="20230706 01:04:10.640"/>
 </kw>
-<tag>VariableDemostration2</tag>
-<status status="PASS" starttime="20230630 01:25:25.614" endtime="20230630 01:25:30.272"/>
+<tag>listvariable</tag>
+<status status="PASS" starttime="20230706 01:04:06.311" endtime="20230706 01:04:10.640"/>
 </test>
-<kw name="Clean up data" library="Commons" type="TEARDOWN">
-<kw name="Log" library="BuiltIn">
-<arg>Cleanup data after running the test cases.</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20230630 01:25:30.274" level="INFO">Cleanup data after running the test cases.</msg>
-<status status="PASS" starttime="20230630 01:25:30.273" endtime="20230630 01:25:30.274"/>
-</kw>
-<status status="PASS" starttime="20230630 01:25:30.273" endtime="20230630 01:25:30.274"/>
-</kw>
-<doc>Basic Test cases</doc>
-<status status="PASS" starttime="20230630 01:25:25.468" endtime="20230630 01:25:30.274"/>
+<status status="PASS" starttime="20230706 01:04:06.167" endtime="20230706 01:04:10.641"/>
 </suite>
 <statistics>
 <total>
 <stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">VariableDemostration2</stat>
+<stat pass="1" fail="0" skip="0">listvariable</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="AmazonLogin">AmazonLogin</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="passingVariablesToKeywords">passingVariablesToKeywords</stat>
 </suite>
 </statistics>
 <errors>

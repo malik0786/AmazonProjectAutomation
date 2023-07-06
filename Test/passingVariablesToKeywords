@@ -1,0 +1,31 @@
+*** Settings ***
+Library  Selenium2Library
+
+
+*** Variables ***
+
+
+*** Test Cases ***
+Open browser using scalar variables
+    Begin web test using scalar variables  http://www.amazon.ca    chrome   #user defined keyword
+
+Open browser using list variable
+    [Tags]  listvariable
+    @{url_and_browser} =  set variable   http://www.amazon.ca       chrome
+    Begin web test using list variables     @{url_and_browser}
+
+*** Keywords ***
+Begin web test using list variables
+    [Arguments]  @{url_and_browser}
+    open browser    ${url_and_browser}[0]  ${url_and_browser}[1]        #list variables. @
+    close browser
+
+begin web test using scalar variables
+    [Arguments]   ${url}  ${browser}              # scalar variables start with $
+    open browser  ${url}  ${browser}
+    close browser
+
+
+
+
+

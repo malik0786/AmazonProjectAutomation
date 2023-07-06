@@ -10,6 +10,7 @@ Suite Teardown    Clean up data
 
 *** Variables ***
 @{LIST_VARIABLES} =  List1  List2   List3
+${GLOBAL_VARIABLE} =  declared global variable from script file
 
 *** Test Cases ***
 Variable Demostration
@@ -22,9 +23,9 @@ Variable Demostration
 Variable Demostration 2
     [Tags]  VariableDemostration2
     @{new_list_variables} =  create list  list3    list4   list5
-    log   ${new_list_variables}[0]
-    log   ${new_list_variables}[1]
-    log   ${new_list_variables}[2]
+    log   @{new_list_variables}[0]
+    log   @{new_list_variables}[1]
+    log   @{new_list_variables}[2]
 
 User can Search for Products on Amazon
     [Documentation]    Getting started with Amazon Login
@@ -34,6 +35,12 @@ User can Search for Products on Amazon
     ${my_new _variable} =  set variable  this is my new variable.
 
     log    Starting login into Amazon
+
+Checking scope of variable
+    [Tags]  scope
+    #${variable_inside_testcase} =   set variable  inside the testcase.
+    #log  ${variable_inside_testcase}
+    log     ${GLOBAL_VARIABLE}
 
 User can add the products to Cart
     AmazonKeywords.Search for Product
